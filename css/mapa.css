@@ -1,0 +1,472 @@
+ html,
+ body,
+ div,
+ span,
+ applet,
+ object,
+ iframe,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ blockquote,
+ pre,
+ a,
+ abbr,
+ acronym,
+ address,
+ big,
+ cite,
+ code,
+ del,
+ dfn,
+ em,
+ img,
+ ins,
+ kbd,
+ q,
+ s,
+ samp,
+ small,
+ strike,
+ strong,
+ sub,
+ sup,
+ tt,
+ var,
+ b,
+ u,
+ i,
+ center,
+ dl,
+ dt,
+ dd,
+ ol,
+ ul,
+ li,
+ fieldset,
+ form,
+ label,
+ legend,
+ table,
+ caption,
+ tbody,
+ tfoot,
+ thead,
+ tr,
+ th,
+ td,
+ article,
+ aside,
+ canvas,
+ details,
+ embed,
+ figure,
+ figcaption,
+ footer,
+ header,
+ hgroup,
+ menu,
+ nav,
+ output,
+ ruby,
+ section,
+ summary,
+ time,
+ mark,
+ audio,
+ video {
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ article,
+ aside,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ hgroup,
+ menu,
+ nav,
+ section {
+   display: block;
+ }
+ 
+ body {
+   line-height: 1;
+ }
+ 
+ ol,
+ ul {
+   list-style: none;
+ }
+ 
+ blockquote,
+ q {
+   quotes: none;
+ }
+ 
+ blockquote:before,
+ blockquote:after,
+ q:before,
+ q:after {
+   content: none;
+ }
+ 
+ table {
+   border-collapse: collapse;
+   border-spacing: 0;
+ }
+ 
+ b {
+   font-weight: bold;
+   font-size: 1.05em;
+ }
+ 
+ body {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 1em;
+   color: #777;
+ }
+ #title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+ }
+ #subtitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+ }
+
+ #wrapper {
+   width: 1400px;
+   font-size: 1em;
+   margin: 10px;
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: row;
+ }
+ #wapper1{
+  width: 985px;
+  font-size: 1em;
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+ }
+#ttmap{
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+#barrasInter{float: left;margin-top:45px;/* border: solid black 1px; */}
+.barr{padding-left: 10px;}
+.barr text{fill:#777;}
+#ast{font-size: 13px;}
+#trimestre, #mes,#sexos{line-height: 20px;}
+#barrasInter svg rect{cursor: pointer;}
+
+ div.tooltip {
+   position: absolute;
+   text-align: left;
+   width: 150px;
+   height: auto;
+   background: white;
+   border: 1px solid #ddd;
+   pointer-events: none;
+   font: 15px sans-serif;
+   z-index: 2;
+   padding: 10px;
+   opacity: 0;
+   line-height: 18px;
+ }
+ 
+ #mapa svg:active {
+   cursor: move;
+   cursor: -moz-grabbing;
+   cursor: -webkit-grabbing;
+ }
+ 
+ .path:hover {
+   cursor: pointer;
+ }
+ 
+ #mapa svg:active {
+   cursor: move;
+   cursor: -moz-grabbing;
+   cursor: -webkit-grabbing;
+ }
+ 
+ #cajaDatos {
+   float: left;
+   width: 400px;
+   pointer-events: none;
+ 
+ }
+ 
+ #cajaSlider {
+   float: left;
+   margin-top: 30px;
+   height: 65px;
+   width: 985px;
+ }
+ 
+ .axis {
+   fill: rgba(172, 172, 172, 1);
+ }
+ 
+ .slideraxis {
+   fill: #bbb;
+ }
+ 
+ path.cursor {
+   fill: #d0694c;
+ }
+ 
+ #tasa {
+   font-size: 20px;
+   float: left;
+   height: 0px;
+   width: 200px;
+   /* padding-top: 30px; */
+ }
+ 
+ #year {
+   float: left;
+   font-size: 3em;
+   padding-top: 10px;
+   width: 300px;
+   border-bottom: #777 1px solid;
+ }
+ 
+ #maxMin {
+   float: left;
+   width: 500px;
+   display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+ }
+ 
+ #mediaParo {
+   margin-top: 20px;
+   float: left;
+   width: 300px;
+   font-size: 2em;
+ }
+ 
+ .mediaNacional {
+   margin-bottom: 20px;
+   border-bottom: solid 1px #777;
+   width: 300px;
+ }
+ 
+ #maximoParo {
+   font-size: 2em;
+   padding-top: 20px;
+
+   /* float: right; */
+ }
+ 
+ #minimoParo {
+   margin-top: 20px;
+   /* float: right; */
+   font-size: 2em;
+ }
+ 
+ .icono {
+   /* float: left; */
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: row;
+ }
+ 
+ .iconoMaximo {
+   height: 40px;
+   width: 40px;
+   /* float: right; */
+   margin: 20px 10px 0 0;
+   background: url(../../img/iconos.png)-99px 100px;
+ }
+
+ 
+ .iconoMinimo {
+   height: 40px;
+   width: 40px;
+   background: url(../../img/iconos.png)-178px 100px;
+   /* float: right; */
+   margin: 20px 10px 0 0;
+ }
+ 
+ .mano {
+   margin: 10px 5px 0 0;
+   width: 40px;
+   height: 50px;
+   background: url(../../img/iconos.png)-250px 100px;
+   float: left;
+ }
+ 
+ #slider {
+   float: left;
+   width: 935px;
+   height: 45px;
+ }
+ 
+ .inicio {
+   padding-left: 4px;
+   float: left;
+   font-size: 0.8em;
+ }
+ 
+ .final {
+   padding-right: 23px;
+   float: right;
+   font-size: 0.8em;
+ }
+ 
+ #leyenda {
+   display: inline-block;
+   width: 700px;
+   height: 40px;
+   font-size: 0.9em;
+   text-align: center;
+   /* padding: 10px 10px 10px 10px 0; */
+   /* margin-top: 105px; */
+   pointer-events: none;
+   margin-left: 150px;
+ }
+ 
+ .key {
+   float: left;
+   width: 70px;
+   border-right: 1px solid #202020;
+   height: 20px;
+ }
+ 
+ .key:last-child {
+   border-right: none;
+ }
+ .key:first-child {
+   text-align: left;
+   text-indent: -50px;
+ }
+ 
+ .masCinco,
+ .masQuince,
+ .masVeinticinco,
+ .masTreintaYCinco,
+ .masTreintaY1Cinco,
+ .masTreintaY2Cinco,
+ .masCuarenta,
+ .Nan {
+   height: 10px;
+ }
+ 
+ .masCinco .color {
+   background-color: #ecc5b4;
+ }
+ 
+ .masQuince .color {
+   background-color: #e3a78f;
+ }
+ 
+ .masVeinticinco .color {
+   background-color: #d9886c;
+ }
+ 
+ .masTreintaYCinco .color {
+   background-color: #d0694c;
+ }
+ .masTreintaY1Cinco .color {
+   background-color: #cc4f2c;
+ }
+ .masTreintaY2Cinco .color {
+   background-color: #ad3413;
+ }
+ 
+ .masCuarenta .color {
+   background-color: #66220d;
+ }
+ .Nan .color {
+   background-color: #ccc;
+ }
+ 
+ .textoLeyenda {
+   height: 10px;
+   width: 70px;
+   float: left;
+ }
+ 
+ .textoLeyenda span {
+   position: relative;
+   left: 35px;
+   text-align: center;
+   top: 25px;
+ }
+ .textoLeyendaNan {
+   height: 10px;
+   width: 70px;
+   float: left;
+ }
+ 
+ .textoLeyendaNan span {
+   position: relative;
+   left: 35px;
+   text-align: left;
+   top: 25px;
+ }
+ 
+ /* //fin estilos leyenda */
+ .move:hover {
+   cursor: pointer;
+ }
+ 
+ #datosMapa {
+   /* float: left; */
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+   align-items: center;
+   width: 985px;
+   height: 650px;
+ 
+ }
+ 
+ #mapas {
+   /* float: right; */
+   width: 1000px;
+   height: 450px;
+   margin: 50px 20px 0 0;
+ 
+ }
+ #wrapper1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+ }
+
+ /* #canarias {
+   //float: right;
+   height: 100px;
+   width: 240px;
+   top: -115px;
+   left: 360px;
+   position: relative;
+   border-top: solid 1px graytext;
+   border-left: solid 1px graytext;
+   border-radius: 30px 0;
+ } */
+ 

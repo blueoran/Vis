@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+    <link href="css/mapa.css" rel="stylesheet" type="text/css" />
+    <link href="css/paroEpa.css" rel="stylesheet" type="text/css" />
+    <style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+    .mac-os-11 { --title-bar-height:28px; }
+    html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+    iframe { margin: auto; }
+    a.url { word-break: break-all; }
+    a:active, a:hover { outline: 0px; }
+    .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+    #write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+    #write.first-line-indent p { text-indent: 2em; }
+    #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+    #write.first-line-indent li { margin-left: 2em; padding-left: 2em;}
+    .for-image #write { padding-left: 8px; padding-right: 8px; }
+    body.typora-export { padding-left: 30px; padding-right: 30px; }
+    .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+    .typora-export .task-list-item input { pointer-events: none; }
+    @media screen and (max-width: 500px) {
+      body.typora-export { padding-left: 0px; padding-right: 0px; }
+      #write { padding-left: 20px; padding-right: 20px; }
+      .CodeMirror-sizer { margin-left: 0px !important; }
+      .CodeMirror-gutters { display: none !important; }
+    }
+    #write li > figure:last-child { margin-bottom: 0.5rem; }
+    #write ol, #write ul { position: relative; }
+    img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+    button, input, select, textarea { color: inherit; font: inherit; }
+    input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+    *, ::after, ::before { box-sizing: border-box; }
+    #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+    #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+    p { line-height: inherit; }
+    h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+    p { orphans: 4; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.4rem; }
+    h5 { font-size: 1.2rem; }
+    h6 { font-size: 1rem; }
+    .md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+    .hidden { display: none; }
+    .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+    a { cursor: pointer; }
+    sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+    sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+    #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+    figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+    figure > table { margin: 0px; }
+    tr { break-inside: avoid; break-after: auto; }
+    thead { display: table-header-group; }
+    table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+    table.md-table td { min-width: 32px; }
+    .CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+    .CodeMirror-linenumber { user-select: none; }
+    .CodeMirror { text-align: left; }
+    .CodeMirror-placeholder { opacity: 0.3; }
+    .CodeMirror pre { padding: 0px 4px; }
+    .CodeMirror-lines { padding: 0px; }
+    div.hr:focus { cursor: none; }
+    #write pre { white-space: pre-wrap; }
+    #write.fences-no-line-wrapping pre { white-space: pre; }
+    #write pre.ty-contain-cm { white-space: normal; }
+    .CodeMirror-gutters { margin-right: 4px; }
+    .md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+    .md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+    #write .md-fences.mock-cm { white-space: pre-wrap; }
+    .md-fences.md-fences-with-lineno { padding-left: 0px; }
+    #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+    .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+    .CodeMirror-line, twitterwidget { break-inside: avoid; }
+    .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+    .footnotes + .footnotes { margin-top: 0px; }
+    .md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+    li div { padding-top: 0px; }
+    blockquote { margin: 1rem 0px; }
+    li .mathjax-block, li p { margin: 0.5rem 0px; }
+    li blockquote { margin: 1rem 0px; }
+    li { margin: 0px; position: relative; }
+    blockquote > :last-child { margin-bottom: 0px; }
+    blockquote > :first-child, li > :first-child { margin-top: 0px; }
+    .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+    #write .footnote-line { white-space: pre-wrap; }
+    @media print {
+      body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+      #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+      .typora-export * { -webkit-print-color-adjust: exact; }
+      .typora-export #write { break-after: avoid; }
+      .typora-export #write::after { height: 0px; }
+      .is-mac table { break-inside: avoid; }
+      .typora-export-show-outline .typora-export-sidebar { display: none; }
+    }
+    .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+    a img, img a { cursor: pointer; }
+    pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+    p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+    #write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+    p > .md-image:only-child { display: inline-block; width: 100%; }
+    #write .MathJax_Display { margin: 0.8em 0px 0px; }
+    .md-math-block { width: 100%; }
+    .md-math-block:not(:empty)::after { display: none; }
+    .MathJax_ref { fill: currentcolor; }
+    [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+    .md-task-list-item { position: relative; list-style-type: none; }
+    .task-list-item.md-task-list-item { padding-left: 0px; }
+    .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+    .math { font-size: 1rem; }
+    .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+    .md-toc-content { position: relative; margin-left: 0px; }
+    .md-toc-content::after, .md-toc::after { display: none; }
+    .md-toc-item { display: block; color: rgb(65, 131, 196); }
+    .md-toc-item a { text-decoration: none; }
+    .md-toc-inner:hover { text-decoration: underline; }
+    .md-toc-inner { display: inline-block; cursor: pointer; }
+    .md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+    .md-toc-h2 .md-toc-inner { margin-left: 2em; }
+    .md-toc-h3 .md-toc-inner { margin-left: 4em; }
+    .md-toc-h4 .md-toc-inner { margin-left: 6em; }
+    .md-toc-h5 .md-toc-inner { margin-left: 8em; }
+    .md-toc-h6 .md-toc-inner { margin-left: 10em; }
+    @media screen and (max-width: 48em) {
+      .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+      .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+      .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+      .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+    }
+    a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+    .footnote-line a:not(.reversefootnote) { color: inherit; }
+    .md-attr { display: none; }
+    .md-fn-count::after { content: "."; }
+    code, pre, samp, tt { font-family: var(--monospace); }
+    kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+    .md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+    code { text-align: left; vertical-align: initial; }
+    a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+    .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+    .md-diagram-panel > svg { max-width: 100%; }
+    [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+    [lang="mermaid"] .node text { font-size: 1rem; }
+    table tr th { border-bottom: 0px; }
+    video { max-width: 100%; display: block; margin: 0px auto; }
+    iframe { max-width: 100%; width: 100%; border: none; }
+    .highlight td, .highlight tr { border: 0px; }
+    mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+    .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+    .md-expand mark .md-meta { opacity: 0.3 !important; }
+    mark .md-meta { color: rgb(0, 0, 0); }
+    @media print {
+      .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+    }
+    .md-diagram-panel .messageText { stroke: none !important; }
+    .md-diagram-panel .start-state { fill: var(--node-fill); }
+    .md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+    .md-fences.md-fences-math { font-size: 1em; }
+    .md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+    .md-fences-advanced:not(.md-focus) { background: inherit; }
+    .typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+    .typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+    .typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+    .typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+    @media screen and (max-width: 1024px) {
+      .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+    }
+    @media screen and (max-width: 800px) {
+      .typora-export-sidebar { display: none; }
+    }
+    .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+    .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+    .outline-content strong { font-weight: bolder; }
+    .outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+    .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+    .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+    .outline-expander:hover::before { content: ""; }
+    .outline-h1 > .outline-item { padding-left: 0px; }
+    .outline-h2 > .outline-item { padding-left: 1em; }
+    .outline-h3 > .outline-item { padding-left: 2em; }
+    .outline-h4 > .outline-item { padding-left: 3em; }
+    .outline-h5 > .outline-item { padding-left: 4em; }
+    .outline-h6 > .outline-item { padding-left: 5em; }
+    .outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+    .outline-label:hover { text-decoration: underline; }
+    .outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+    .outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+    .outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+    .outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+    .outline-children { display: none; }
+    .info-panel-tab-wrapper { display: none; }
+    .outline-item-open > .outline-children { display: block; }
+    .typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+    .typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+    .typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+    .typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+    .typora-export-collapse-outline .outline-children { display: none; }
+    .typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+    .typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+    .typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+    .md-inline-math-container mjx-container { zoom: 0.95; }
+    
+    
+    html {
+      font-size: 19px;
+    }
+    
+    html, body {
+      margin: auto;
+      background: #fefefe;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      font-family: "Vollkorn", Palatino, Times;
+      color: #333;
+      line-height: 1.4;
+      text-align: justify;
+    }
+    
+    #write {
+      max-width: 960px;
+      margin: 0 auto;
+      margin-bottom: 2em;
+      line-height: 1.53;
+      padding-top: 40px;
+    }
+    
+    @media only screen and (min-width: 1400px) {
+      #write {
+        max-width: 1100px;
+      }
+    }
+    
+    @media print {
+      html {
+        font-size: 13px;
+      }
+    }
+    
+    /* Typography
+    -------------------------------------------------------- */
+    
+    #write>h1:first-child,
+    h1 {
+      margin-top: 1.6em;
+      font-weight: normal;
+    }
+    
+    h1 {
+      font-size:3em;
+    }
+    
+    h2 {
+      margin-top:2em;
+      font-weight: normal;
+    }
+    
+    h3 {
+      font-weight: normal;
+      font-style: italic;
+      margin-top: 3em;
+    }
+    
+    h1, 
+    h2, 
+    h3{
+      text-align: center;
+    }
+    
+    h2:after{
+      border-bottom: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        display: block;
+        margin: 0 auto;
+        height: 1px;
+    }
+    
+    h1+h2, h2+h3 {
+      margin-top: 0.83em;
+    }
+    
+    p,
+    .mathjax-block {
+      margin-top: 0;
+      -webkit-hypens: auto;
+      -moz-hypens: auto;
+      hyphens: auto;
+    }
+    ul {
+      list-style: square;
+      padding-left: 4em;
+    }
+    ol {
+      padding-left: 1.2em;
+    }
+    blockquote {
+      margin-left: 1em;
+      padding-left: 1em;
+      border-left: 1px solid #ddd;
+    }
+    code,
+    pre {
+      font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+      font-size: .9em;
+      background: white;
+    }
+    .md-fences{
+      margin-left: 1em;
+      padding-left: 1em;
+      border: 1px solid #ddd;
+      padding-bottom: 8px;
+      padding-top: 6px;
+      margin-bottom: 1.5em;
+    }
+    
+    a {
+      color: #2484c1;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    a img {
+      border: none;
+    }
+    h1 a,
+    h1 a:hover {
+      color: #333;
+      text-decoration: none;
+    }
+    hr {
+      color: #ddd;
+      height: 1px;
+      margin: 2em 0;
+      border-top: solid 1px #ddd;
+      border-bottom: none;
+      border-left: 0;
+      border-right: 0;
+    }
+    .ty-table-edit {
+      background: #ededed;
+        padding-top: 4px;
+    }
+    table {
+      margin-bottom: 1.333333rem
+    }
+    table th,
+    table td {
+      padding: 8px;
+      line-height: 1.333333rem;
+      vertical-align: top;
+      border-top: 1px solid #ddd
+    }
+    table th {
+      font-weight: bold
+    }
+    table thead th {
+      vertical-align: bottom
+    }
+    table caption+thead tr:first-child th,
+    table caption+thead tr:first-child td,
+    table colgroup+thead tr:first-child th,
+    table colgroup+thead tr:first-child td,
+    table thead:first-child tr:first-child th,
+    table thead:first-child tr:first-child td {
+      border-top: 0
+    }
+    table tbody+tbody {
+      border-top: 2px solid #ddd
+    }
+    
+    .task-list{
+      padding:0;
+    }
+    
+    .md-task-list-item {
+      padding-left: 1.6rem;
+    }
+    
+    .md-task-list-item > input:before {
+      content: '\221A';
+      display: inline-block;
+      width: 1.33333333rem;
+        height: 1.6rem;
+      vertical-align: middle;
+      text-align: center;
+      color: #ddd;
+      background-color: #fefefe;
+    }
+    
+    .md-task-list-item > input:checked:before,
+    .md-task-list-item > input[checked]:before{
+      color: inherit;
+    }
+    .md-tag {
+      color: inherit;
+      font: inherit;
+    }
+    #write pre.md-meta-block {
+      min-height: 35px;
+      padding: 0.5em 1em;
+    }
+    #write pre.md-meta-block {
+      white-space: pre;
+      background: #f8f8f8;
+      border: 0px;
+      color: #999;
+      
+      width: 100vw;
+      max-width: calc(100% + 60px);
+      margin-left: -30px;
+      border-left: 30px #f8f8f8 solid;
+      border-right: 30px #f8f8f8 solid;
+    
+      margin-bottom: 2em;
+      margin-top: -1.3333333333333rem;
+      padding-top: 26px;
+      padding-bottom: 10px;
+      line-height: 1.8em;
+      font-size: 0.9em;
+      font-size: 0.76em;
+      padding-left: 0;
+    }
+    .md-img-error.md-image>.md-meta{
+      vertical-align: bottom;
+    }
+    #write>h5.md-focus:before {
+      top: 2px;
+    }
+    
+    .md-toc {
+      margin-top: 40px;
+    }
+    
+    .md-toc-content {
+      padding-bottom: 20px;
+    }
+    
+    .outline-expander:before {
+      color: inherit;
+      font-size: 14px;
+      top: auto;
+      content: "\f0da";
+      font-family: FontAwesome;
+    }
+    
+    .outline-expander:hover:before,
+    .outline-item-open>.outline-item>.outline-expander:before {
+        content: "\f0d7";
+    }
+    
+    /** source code mode */
+    #typora-source {
+      font-family: Courier, monospace;
+        color: #6A6A6A;
+    }
+    
+    .html-for-mac #typora-sidebar {
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+    
+    .cm-s-typora-default .cm-header, 
+    .cm-s-typora-default .cm-property,
+    .CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+      color: #428bca;
+    }
+    
+    .cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+      color: #777777;
+    }
+    
+    .typora-node .file-list-item-parent-loc, 
+    .typora-node .file-list-item-time, 
+    .typora-node .file-list-item-summary {
+      font-family: arial, sans-serif;
+    }
+    
+    .md-task-list-item>input {
+        margin-left: -1.3em;
+        margin-top: calc(1rem - 12px);
+    }
+    
+    .md-mathjax-midline {
+      background: #fafafa;
+    }
+    
+    .md-fences .code-tooltip {
+      bottom: -2em !important;
+    }
+    
+    .dropdown-menu .divider {
+      border-color: #e5e5e5;
+    }
+    
+    
+    </style>
+    <script src="./lib/d3/d3.js" type="text/javascript"></script>
+
+    <title>Literacy Rate</title>
+  </head>
+
+  <body class='typora-export os-windows'><div class='typora-export-content'>
+    <div id='write'  class=''>
+    <h1 id="1"><span>全球受教育程度分析</span></h1>
+    <h2 id="1"><span>数据介绍</span></h2>
+    <h5 id="1"><span>数据来源</span></h5>
+    <a href='http://data.uis.unesco.org/'><span>UIS Statistics (unesco.org)</span></a><span>教科文组织统计研究所（UIS）官网。</span></p>
+    <h5 id="2"><span>数据类别</span></h5>
+    <li><span>文盲数量、女性占比(Number of illiterates /Percentage of illiterates who are female)</span></li>
+    <li><span>各学科大专毕业生的分布(Percentage of graduates by field of education)</span></li>
+    <li><span>不同教育水平的招生率、入学率(Number of students and enrolment/attendance rates by level of education)</span></li>
+
+    <div id="wrapper1">
+      <h2 id="3"><span>识字率的时空分布</h2></span>
+      <div id="wrapper">
+      <!-- <div id="datosMapa"> -->
+        <div id="cajaDatos">
+          <div id="tasa-parados">
+            <div id="tasa"></div>
+            <div id="year"></div>
+          </div>
+          <div id="maxMin">
+            <div id="mediaParo"></div>
+            <div class="mediaNacional">Global Average</div>
+            <div class="icono">
+              <div class="iconoMaximo"></div>
+              <div id="maximoParo"></div>
+            </div>
+            <div class="icono">
+              <div class="iconoMinimo"></div>
+              <div id="minimoParo"></div>
+            </div>
+          </div>
+          <div id="barrasInter"><div id="trimestre"></div></div>
+        </div>
+        <div id="datosMapa">
+        <div id="mapas">
+          <div id="mapa"></div>
+          <div id="canarias"></div>
+        </div>
+        <div id="leyenda">
+          <div class="key">
+            <div class="Nan">
+              <div class="textoLeyendaNan color"><span>None Value 0%</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masCinco">
+              <div class="textoLeyenda color"><span>40</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masQuince">
+              <div class="textoLeyenda color"><span>60</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masVeinticinco">
+              <div class="textoLeyenda color"><span>75</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masTreintaYCinco">
+              <div class="textoLeyenda color"><span>85</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masTreintaY1Cinco">
+              <div class="textoLeyenda color"><span>90</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masTreintaY2Cinco">
+              <div class="textoLeyenda color"><span>95</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masCuarenta">
+              <div class="textoLeyenda color"></div>
+            </div>
+          </div>
+          
+  
+          <!--
+            <div class="k"><div class="color" style="background: rgb(255, 231, 235);"></div><div class="text"><span>2%</span></div></div>
+          -->
+        </div>
+        <div id="cajaSlider">
+          <div class="mano"></div>
+          <div id="slider"></div>
+          <div class="inicio">1975</div>
+          <div class="final">2021</div>
+        </div>
+      </div>
+      </div>
+      <script src="mapa.js" type="text/javascript"></script>
+
+      <div id="mappppp">
+        <h3 id="7"><span>数据处理</span></h3>
+        
+        <li><span>各国文盲率统计周期存在差异，在两次统计之间的数据为空值。因此，选用与当前年份最接近的非空值数据作为该年的文盲率。</span></li><li><span>部分国家数据全为空值，其主要原因可能是非成员国，例如2018年退出的美国，将其标记为无效值(none value)。</span></li><li><span>尽管部分数据点异常，如乌克兰的文化水平达到99.9%，但离群点分析无法在较高置信度下判断其为离群值，因此仍保留该数据。</span></li>
+        
+        <h3 id="5"><span>分析</span></h3>
+        <li><span>随着时间的推移，非空值数据比例逐渐增加，在21世纪初达到稳定。数据空值的原因可能是引入其他数据源可能导致可比性受损。</span></p></li><li><span>总体来看，各国文化水平逐年上升。</span></p></li><li><span>各大洲文化水平存在较大差异，欧洲国家基本上在有效数据产生时就已达到95%以上的文化水平；南美洲国家整体水平较高，截至2021年，几乎所有国家都在90%以上；亚洲国家在有效数据出现时普遍水平较低，但在2000年之后增长较快，部分国家达到95%以上；非洲国家总体水平较低，2021年仅有一个国家达到95%。</span></p></li><li><span>在洲内，各大洲也存在一定的不平衡：</span></p><ul start='4'><li><span>欧洲：各国文化水平处于较高水平，差异不显著。</span></li><li><span>南美洲：南部地区水平较高，自1998年起阿根廷、乌拉圭、智利均达到95%以上；其余国家约为90%。</span></li><li><span>亚洲：东北地区水平高于西南地区。起始值便存在差异，如1984年，后续增速也有所不同，如阿富汗、巴基斯坦、印度等国家在近20年内变化较小。</span></li><li><span>非洲：南北两端水平较高，中部地区较低。参考1986年的初始值，差异已经显现；截至2021年，仅南非达到95%。</span></li></ul></li>
+    </div>
+
+
+
+    <h2 id='全球识字率的时间分布'><span>全球识字率在不同属性上的的时间分布</span></h2>
+    <div id="g_wrapper">
+      <div id="g_header">
+        <h4 id=''><span>全球识字率总体的时间分布</span></h4>
+      <div id="g_contenedorGrafico">
+      </div>
+
+    </div>
+    <!-- <div id="g_header1"> -->
+    <!-- <div id="g_header2"> -->
+      <div id="g_header">
+        <!-- <h2 id='各阶段的男女受教育比例'><span>各阶段的男女受教育比例</span></h2> -->
+        <h4 id='各阶段的男女受教育比例'><span>各阶段的男女受教育比例</span></h4>
+      <div id="graficasexos">
+        <div id="sexos"></div>
+        <div id="barrasH">
+          <div id="tituloH">
+            Male<br /><img id="hombre" src="./img/hombres.png" alt="" />
+          </div>
+        </div>
+        <div id="edades"></div>
+        <div id="barrasM">
+          <div id="tituloM">
+            Female<br /><img id="mujer" src="./img/mujeres.png" alt="" />
+          </div>
+        </div>
+
+      </div>
+      </div>
+
+    </div>        
+      <div id="g_header">
+      <div id="J">
+      <div id="contenedorDonut">
+        <div id="sectores"></div>
+        <div id="mes"></div>
+        <div id="donut"></div>
+      </div>
+      <div id="g_barrasInter"><div id="g_trimestre"></div></div>
+    </div>
+
+      </div>
+  </div>
+
+
+  <h3 id="5"><span>数据处理</span></h3>
+  <li><span>全球识字率总体：汇总每年各国文盲人数，计算每年的全球识字率均值。</span></li>
+  <li><span>各阶段男女教育比例：原始数据提供了每年各教育层次的毕业人数，我们针对每个年份对男女分别进行累加计算，得到各学历及以上的人数，并使用平均数填充空值。</span></li>
+  <li><span>识字人群收入阶层分布：无法直接计算各收入阶层的识字人数。相反，需要依赖于两个数据集，一个数据集估计了每个收入阶层的人数，另一个数据集估计了各个收入阶层的识字率。将这两个数据集相乘以获得收入阶层的识字人数。对于这两组数据中的空值，我们采用样条插值法（splice）进行插值。</span></li>
+  <li><span>各地区识字率：将各国数据按照年份和地区进行汇总计算。</span></li>
+  <h3 id="5"><span>分析</span></h3>
+  <h4 id="5"><span>全球识字率总体</span></h4> 
+  <p><span>呈现平稳上升趋势，拟合结果较为理想。</span></p>
+  <h4 id="5"><span>各阶段的男女受教育比例</span></h4>
+  <p><span>各性别和各教育阶段的受教育率均表现出上升趋势。</span></p>
+    
+    <li><span>高等教育：最初女性多于男性，但从2003年开始，男性多于女性且差距呈增大趋势。</span></li>
+    
+    <li><span>高中：类似，男性增速大于女性，2013年开始反超。</span></li>
+    
+    <li><span>初中：基本持平</span></li>
+    <li><span>小学：女性多于男性，差距约为2%。</span></li>
+    <p><div id="bold"><span>可能原因</span></div><span>分析是否受教育和停止接受教育的时间，前者门槛较低，大部分未受教育者来自落后地区，由于重男轻女的观念影响，未受教育的男性更多；后者，随着时间推移，教育水平提高，普遍结束时间延后，但女性倾向于更早地结束接受教育，可能与刻板印象有关，从而导致性别差异。</span></p>
+
+  <h4 id="5"><span>识字人群的收入阶层分布</span></h4>
+  <p><span>中高层降低，其余层次增大。低收入占比1.76%，中低收入占比5.38%，中产收入占比0.66%。</span></p>
+  <p><div id="bold"><span>可能原因</span></div>  <span>一方面各收入阶层人口比例变化；另一方面，国家对教育的重视、慈善项目等使教育与收入的关系减弱，越来越多非高收入人群接受教育。</span></p>
+  <h4 id="5"><span>各地区的识字率</span></h4>
+  <p><span>亚洲、欧洲以及拉丁美洲地区识字率高于中东、南亚和非洲地区，但差距呈现缩小趋势。</span></p>
+  <p><div id="bold"><span>可能原因</span></div>  </p>
+  <li><span>经济发展水平相符，基本与普遍认知的经济水平一致；</span></li>
+  <li><span>教育发展水平，与个人作业中大学入学率的分布类似；</span></li>
+  <li><span>统计方法可能导致误差。数据来自每两年一次的向所有联合国教科文组织国家发出的扫盲和教育程度调查，结合其他项目的国家人口普查和家庭抽样调查，计算得到识字率。部分数据取自扫盲预测模型（GALP），对数据缺失的年份进行估算。估算和抽样的过程均可能导致与实际情况不符，如乌兹别克斯坦自2010年后的识字率接近100%，较为不切实际。</span></li>
+
+
+    <script src="paroEpa.js" type="text/javascript"></script>
+    <h2 id="5"><span>未来展望</span></h2>
+      <li><span>随着经济全球化、教育资源交流和各国在教育领域的合作不断深化，我们有充分理由预期全球的文化水平将持续提升，识字率差异将逐渐缩小。政府、国际组织以及社会各界应持续加大对教育领域的投入，尤其是针对欠发达地区和弱势群体的支持，以推动教育事业实现公平和普惠性的发展。</span></li>
+      <li><span>数据可视化在未来将继续发挥关键作用，帮助我们更加深入地认识全球文化水平的演变、发掘问题并找到针对性解决方案。同时，优化统计方法和数据来源将助力提高数据的真实性和准确性。</span></li>
+      <li><span>教育科技不断创新与推广可能会改变传统的教育模式，提供更多优质教育资源，并协助更多人提高文化水平与生活品质。</span></li>
+      <li><span>在未来的发展过程中，我们期待见证一个更加均衡、公正和共享的全球教育发展趋势，为人类的进步持续贡献力量。</span></li>      
+    </div></div>
+  </body>
+</html>
+
+
